@@ -2,7 +2,7 @@ import React,{PureComponent} from 'react';
 
 export default class Home extends PureComponent{
     componentDidMount(){
-        fetch('http://localhost:5000/api/list').then(res=>{
+        fetch('/api/list').then(res=>{
             console.log(res)
         })
     }
