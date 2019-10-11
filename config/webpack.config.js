@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const isWsl = require('is-wsl');
@@ -661,6 +661,17 @@ module.exports = function(webpackEnv) {
           formatter: isEnvProduction ? typescriptFormatter : undefined,
         }),
     ].filter(Boolean),
+    devServer:{
+      contentBase: path.join(__dirname, "dist"),
+      compress: true,
+      port: 9000,
+      proxy: {
+          "/api": {
+            target: "http://127.0.0.1:3000/",
+            pathRewrite: {"^/api" : ""}
+          }
+        }
+    },
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.
     node: {
