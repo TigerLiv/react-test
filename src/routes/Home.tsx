@@ -34,7 +34,7 @@ export default class Home extends Component<PropsType, any> {
                         </Switch>
                     </Content>
                 </Layout>
-                <Footer>Footer</Footer>
+                <Footer></Footer>
             </Layout>
         )
     }

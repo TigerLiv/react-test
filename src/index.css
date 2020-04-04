@@ -33,3 +33,7 @@ code {
   font-size: 28px;
   font-weight: bold;
 }
+.ant-layout-footer{
+  color: #fff;
+  background: #001529;
+}
